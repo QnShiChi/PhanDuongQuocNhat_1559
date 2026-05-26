@@ -1,17 +1,17 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <title>Caesar Cipher</title>
+    <title>Vigenere Cipher</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css" rel="stylesheet"/>
 </head>
 <body>
     <div class="container">
         <ul class="nav nav-pills nav-fill mt-4 mb-4">
             <li class="nav-item">
-                <a class="nav-link active" href="/caesar">Caesar</a>
+                <a class="nav-link" href="/caesar">Caesar</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="/vigenere">Vigenere</a>
+                <a class="nav-link active" href="/vigenere">Vigenere</a>
             </li>
             <li class="nav-item">
                 <a class="nav-link" href="/railfence">Railfence</a>
@@ -25,7 +25,7 @@
         </ul>
         <table class="table">
             <tr>
-                <td style="text-align: center; font-weight: bold; font-size: 25px;">CAESAR CIPHER</td>
+                <td style="text-align: center; font-weight: bold; font-size: 25px;">VIGENERE CIPHER</td>
             </tr>
 
             <tr>
@@ -33,27 +33,27 @@
             </tr>
             <tr>
                 <td>
-                    <form method="POST" action="/caesar/encrypt">
+                    <form method="POST" action="/vigenere/encrypt">
                         <div class="mb-3">
                             <label class="form-label">Plain text:</label>
-                            <input 
-                                type="text" 
-                                class="form-control" 
-                                name="inputPlainText" 
-                                placeholder="Input Plain Text" 
+                            <input
+                                type="text"
+                                class="form-control"
+                                name="inputPlainText"
+                                placeholder="Input Plain Text"
                                 value="{{ plain_text if plain_text else '' }}"
-                                required 
+                                required
                                 autofocus
                             />
                         </div>
 
                         <div class="mb-3">
                             <label class="form-label">Key:</label>
-                            <input 
-                                type="number" 
-                                class="form-control" 
-                                name="inputKeyPlain" 
-                                placeholder="Input Key" 
+                            <input
+                                type="text"
+                                class="form-control"
+                                name="inputKeyPlain"
+                                placeholder="Input Key"
                                 value="{{ encrypt_key if encrypt_key else '' }}"
                                 required
                             />
@@ -62,11 +62,11 @@
                         <button type="submit" class="btn btn-primary">Encrypt</button>
 
                         <div class="mb-3 mt-3">
-                            <label class="form-label">Kết quả mã hóa:</label>
-                            <input 
-                                type="text" 
-                                class="form-control" 
-                                value="{{ encrypted_text if encrypted_text else '' }}" 
+                            <label class="form-label">Encryption result:</label>
+                            <input
+                                type="text"
+                                class="form-control"
+                                value="{{ encrypted_text if encrypted_text else '' }}"
                                 readonly
                             />
                         </div>
@@ -79,14 +79,14 @@
             </tr>
             <tr>
                 <td>
-                    <form method="POST" action="/caesar/decrypt">
+                    <form method="POST" action="/vigenere/decrypt">
                         <div class="mb-3">
                             <label class="form-label">Cipher text:</label>
-                            <input 
-                                type="text" 
-                                class="form-control" 
-                                name="inputCipherText" 
-                                placeholder="Input Cipher Text" 
+                            <input
+                                type="text"
+                                class="form-control"
+                                name="inputCipherText"
+                                placeholder="Input Cipher Text"
                                 value="{{ cipher_text if cipher_text else '' }}"
                                 required
                             />
@@ -94,11 +94,11 @@
 
                         <div class="mb-3">
                             <label class="form-label">Key:</label>
-                            <input 
-                                type="number" 
-                                class="form-control" 
-                                name="inputKeyCipher" 
-                                placeholder="Input Key" 
+                            <input
+                                type="text"
+                                class="form-control"
+                                name="inputKeyCipher"
+                                placeholder="Input Key"
                                 value="{{ decrypt_key if decrypt_key else '' }}"
                                 required
                             />
@@ -107,11 +107,11 @@
                         <button type="submit" class="btn btn-success">Decrypt</button>
 
                         <div class="mb-3 mt-3">
-                            <label class="form-label">Kết quả giải mã:</label>
-                            <input 
-                                type="text" 
-                                class="form-control" 
-                                value="{{ decrypted_text if decrypted_text else '' }}" 
+                            <label class="form-label">Decryption result:</label>
+                            <input
+                                type="text"
+                                class="form-control"
+                                value="{{ decrypted_text if decrypted_text else '' }}"
                                 readonly
                             />
                         </div>
